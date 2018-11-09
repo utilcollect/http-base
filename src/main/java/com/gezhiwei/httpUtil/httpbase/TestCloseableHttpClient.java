@@ -1,7 +1,6 @@
 package com.gezhiwei.httpUtil.httpbase;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -23,13 +22,12 @@ public class TestCloseableHttpClient {
             HttpEntity entity = execute.getEntity();
             String s = EntityUtils.toString(entity, "utf-8");
             System.out.println(s);
-        } catch (URISyntaxException e) {
+        } catch (URISyntaxException ignored) {
 
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
 }
